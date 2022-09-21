@@ -1,34 +1,32 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Sol {
 
-    public static void main(String[] args) {
+    static boolean isAnagram(String a, String b) {
+        a = a.toLowerCase();
+        b = b.toLowerCase();        
+        boolean flag=false;
+        // Complete the function
+        char[] c = a.toCharArray();
+        java.util.Arrays.sort(c);
+        char[] d = b.toCharArray();
+        java.util.Arrays.sort(d);
+        String e = new String (c);
+      String f = new String (d);
+      if (e.equals(f)) {
+          flag=true;
+      }
+      return flag;
         
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
-        String B=sc.next();
-        String val="No";
-        A = A.charAt(0).toUpperCase() + str.slice(1);
-        B = B.charAt(0).toUpperCase() + str.slice(1);
-        
-        /* Enter your code here. Print output to STDOUT. */
-        
-        int lena=A.length();
-        int lenb=B.length();
-        
-        int totLen = lena + lenb;
-        
-        System.out.println(totLen);
-        int z = A.compareTo(B);
-        if(z==0)
-             val="Yes";
-        else
-            val="No";
-        System.out.println(val);
-        System.out.println(A +" "+ B);
+    }
+
+  public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
     }
 }
-
-
-
